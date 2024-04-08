@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yen Travels</title>
+  </head>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      /* min-width: 750px; */
+    }
+
+    :root {
+      --primary-color: white;
+      --secondary-color: black;
+      --accent-color: red;
+    }
+    header {
+      /* min-height: 100vh; */
+      background-size: 100%;
+      background-position: center;
+      min-width: 750px;
+      background-repeat: no-repeat;
+      background-image: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/122/282/original/IMG_8593.JPG?1712493068);
+    }
+    .nav,
+    .places-header,
+    .blog-header {
+      display: flex;
+      justify-content: space-between;
+      width: 100vw;
+      padding: 20px 30px;
+    }
+
+    .blog-header {
+      margin-top: 100px;
+    }
+    .nav ul {
+      list-style: none;
+    }
+    .nav ul li {
+      display: inline;
+      padding: 0 20px;
+    }
+
+    .container {
+      width: 50%;
+      height: 500px;
+      padding: 0 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .container h1 {
+      font-size: 80px;
+    }
+
+    .container p {
+      font-size: 18px;
+    }
+
+    .container a {
+      font-size: 18px;
+      text-decoration: none;
+      padding: 10px 20px;
+      border: 1px solid plum;
+      border-radius: 15px;
+      margin: 20px 0;
+      width: fit-content;
+    }
+
+    .quote {
+      display: flex;
+      height: 300px;
+      align-items: center;
+      justify-content: center;
+    }
+    .quote h2 {
+      text-align: center;
+      line-height: 1.3;
+    }
+
+    .quote .unknown {
+      padding-left: 300px;
+    }
+
+    .places-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      /* margin: 0 auto; */
+      padding-bottom: 40px;
+      gap: 25px;
+      border-bottom: 1px solid black;
+      margin-bottom: 30px;
+    }
+
+    .places-container div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0 0px 30px 0px;
+    }
+
+    .places-container div img {
+      width: 250px;
+      height: auto;
+      margin: 15px 0;
+      border: 1px solid black;
+    }
+
+    .about-container {
+      height: 500px;
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      /* padding: 60px 0; */
+      /* margin-bottom: 80px; */
+    }
+
+    .about-pic img {
+      position: absolute;
+      top: 60%;
+      left: 30%;
+    }
+    .about-pic img:nth-child(1) {
+      max-width: 350px;
+      transform: translate(-75%, -60%);
+    }
+
+    img {
+      width: 100%;
+      display: block;
+    }
+    .about-pic img:nth-child(2) {
+      max-width: 250px;
+      transform: translate(0%, -15%);
+    }
+
+    @media (width < 1200px) {
+      .about-pic img:nth-child(1) {
+        max-width: 300px;
+      }
+      .about-pic img:nth-child(2) {
+        max-width: 200px;
+      }
+    }
+
+    .about-desc {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 80px;
+      gap: 10px;
+    }
+
+    @media (width < 900px) {
+      .about-container {
+        grid-template-columns: repeat(1, 1fr);
+        height: 700px;
+      }
+      .about-desc {
+        justify-content: flex-end;
+      }
+      .about-pic img {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+      }
+    }
+
+    .blog-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      /* margin: 0 auto; */
+      gap: 25px;
+      /* border-bottom: 1px solid black; */
+    }
+
+    .blog-container > div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      /* margin: 0 0px 30px 0px; */
+      border: 1px solid black;
+      width: 400px;
+      overflow: hidden;
+    }
+
+    .blog-container div img {
+      width: 400px;
+      height: 300px;
+      /* margin: 15px 0; */
+      border-bottom: 1px solid black;
+    }
+
+    .blog-title {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      padding: 10px 10px;
+      align-items: center;
+      gap: 10px;
+    }
+
+    footer {
+      padding: 100px;
+      margin: 30px 0;
+    }
+  </style>
+  <body>
+    <header>
+      <div class="nav">
+        <div class="nav-logo">m</div>
+        <ul>
+          <li>Home</li>
+          <li>About</li>
+          <li>Blog</li>
+          <li>Contact</li>
+        </ul>
+      </div>
+      <div class="container">
+        <h1>Yen Travels</h1>
+        <p>
+          Sparking curiosity, making adventures, and capturing the world, one
+          place at a time.
+        </p>
+        <a href="">Read my blog</a>
+      </div>
+    </header>
+    <main>
+      <div class="quote">
+        <h2>
+          “Life is short and the world is wide.” <br />
+          <span class="unknown">-Unknown</span>
+        </h2>
+      </div>
+      <div class="places">
+        <div class="places-header">
+          <h2>Past Travels</h2>
+          <a href="">SEE ALL</a>
+        </div>
+        <div class="places-container">
+          <div>
+            <img
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/122/256/original/IMG_8019.JPG?1712475298https://s3.amazonaws.com/shecodesio-production/uploads/files/000/122/313/original/1.png?1712504724"
+              alt=""
+            />
+            <h3>Thailand</h3>
+          </div>
+          <div>
+            <img
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/122/314/original/2.png?1712504733"
+              alt=""
+            />
+            <h3>Vietnam</h3>
+          </div>
+          <div>
+            <img
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/122/315/original/3.png?1712504741"
+              alt=""
+            />
+            <h3>Cambodia</h3>
+          </div>
+          <div>
+            <img
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/122/316/original/4.png?1712504750"
+              alt=""
+            />
+            <h3>Japan</h3>
+          </div>
+        </div>
+      </div>
+      <div class="about-container">
+        <div class="about-pic">
+          <img
+            src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/122/317/original/5.png?1712504758"
+            alt=""
+          /><img
+            src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/119/807/original/7.png?1710863498"
+            alt=""
+          />
+        </div>
+        <div class="about-desc">
+          <h2>Hi I'm Yen!</h2>
+          <p>
+            I'm just like other girls who found happiness in travelling. Going
+            to a place where you are not familiar with is one of the greatest
+            adventure a person can take. Learning about other cultures, trying
+            out a new dish, discovering a country's history and meeting new
+            people is what I look forward to in life. I hope everyone get to
+            travel and see the beauty of the world.
+          </p>
+        </div>
+      </div>
+      <div class="blog">
+        <div class="blog-header">
+          <h2>Blog</h2>
+          <a href="">SEE ALL</a>
+        </div>
+        <div class="blog-container">
+          <div>
+            <img
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/122/256/original/IMG_8019.JPG?1712475298https://s3.amazonaws.com/shecodesio-production/uploads/files/000/122/313/original/1.png?1712504724"
+              alt=""
+            />
+            <div class="blog-title">
+              <div><h3>15 Must Visit Places In Bangkok</h3></div>
+              <div><a href="index.html">➝</a></div>
+            </div>
+          </div>
+          <div>
+            <img
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/122/314/original/2.png?1712504733"
+              alt=""
+            />
+            <div class="blog-title">
+              <h3>10 Best Things To Do In Ho Chi Minh City</h3>
+              <span> <a href="index.html">➝</a></span>
+            </div>
+          </div>
+          <div>
+            <img
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/122/315/original/3.png?1712504741"
+              alt=""
+            />
+            <div class="blog-title">
+              <h3>The Perfect Cambodia Itinerary</h3>
+              <div><a href="index.html">➝</a></div>
+            </div>
+          </div>
+          <div>
+            <img
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/122/316/original/4.png?1712504750"
+              alt=""
+            />
+            <div class="blog-title">
+              <h3>The Best Time To Go To Tokyo</h3>
+              <span> <a href="index.html">➝</a></span>
+            </div>
+          </div>
+          <div>
+            <img
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/122/316/original/4.png?1712504750"
+              alt=""
+            />
+            <div class="blog-title">
+              <h3>Indochina 7 Days Travel Guide</h3>
+              <span> <a href="index.html">➝</a></span>
+            </div>
+          </div>
+          <div>
+            <img
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/122/316/original/4.png?1712504750"
+              alt=""
+            />
+            <div class="blog-title">
+              <h3>10 Filipino Foods You Need To Try</h3>
+              <span> <a href="index.html">➝</a></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="contact-container">
+        <div>
+          If you want to reach out or want to get an update on my latest travels
+        </div>
+        <div>SEND A MESSAGE</div>
+      </div>
+    </footer>
+  </body>
+</html>
