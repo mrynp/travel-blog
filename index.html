@@ -3,6 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <title>Yen Travels</title>
   </head>
   <style>
@@ -10,7 +16,7 @@
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      /* min-width: 750px; */
+      font-family: "Montserrat", sans-serif;
     }
 
     :root {
@@ -26,15 +32,39 @@
       background-repeat: no-repeat;
       background-image: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/122/282/original/IMG_8593.JPG?1712493068);
     }
-    .nav,
+
+    h1,
+    h2,
+    h3 {
+      font-family: "Merriweather", serif;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .nav {
+      background-color: white;
+      display: flex;
+      justify-content: space-between;
+      width: 100vw;
+      padding: 10px 30px;
+      align-items: center;
+      border-bottom: 1px solid black;
+    }
+
     .places-header,
     .blog-header {
       display: flex;
       justify-content: space-between;
       width: 100vw;
       padding: 20px 30px;
+      align-items: center;
     }
-
+    .nav-logo {
+      font-size: 40px;
+      cursor: pointer;
+    }
     .blog-header {
       margin-top: 100px;
     }
@@ -44,12 +74,13 @@
     .nav ul li {
       display: inline;
       padding: 0 20px;
+      cursor: pointer;
     }
 
     .container {
       width: 50%;
       height: 500px;
-      padding: 0 30px;
+      padding: 0 40px;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -63,14 +94,17 @@
       font-size: 18px;
     }
 
-    .container a {
+    .container button,
+    .contact-container button {
       font-size: 18px;
       text-decoration: none;
       padding: 10px 20px;
-      border: 1px solid plum;
-      border-radius: 15px;
-      margin: 20px 0;
+      border: 1px solid black;
+      border-radius: 20px;
+      margin-top: 20px;
       width: fit-content;
+      background-color: white;
+      cursor: pointer;
     }
 
     .quote {
@@ -82,10 +116,15 @@
     .quote h2 {
       text-align: center;
       line-height: 1.3;
+      font-size: 30px;
+      font-weight: 600;
+      font-style: italic;
     }
 
     .quote .unknown {
-      padding-left: 300px;
+      padding-left: 350px;
+      font-size: 20px;
+      font-style: normal;
     }
 
     .places-container {
@@ -123,14 +162,19 @@
       /* margin-bottom: 80px; */
     }
 
-    .about-pic img {
+    .places-container .about-pic img {
       position: absolute;
       top: 60%;
       left: 30%;
+
+      /* top: 60%;
+      left: 30%; */
     }
     .about-pic img:nth-child(1) {
       max-width: 350px;
-      transform: translate(-75%, -60%);
+      /* transform: translate(-75%, -60%); */
+      transform: translate(40%, 10%);
+      border: 1px solid black;
     }
 
     img {
@@ -139,7 +183,9 @@
     }
     .about-pic img:nth-child(2) {
       max-width: 250px;
-      transform: translate(0%, -15%);
+      /* transform: translate(0%, -15%); */
+      transform: translate(160%, -65%);
+      border: 1px solid black;
     }
 
     @media (width < 1200px) {
@@ -169,8 +215,13 @@
       }
       .about-pic img {
         position: absolute;
-        top: 40%;
-        left: 50%;
+        /* top: 40%;
+        left: 50%; */
+      }
+      .about-pic img:nth-child(2) {
+        max-width: 200px;
+        /* transform: translate(0%, -15%); */
+        transform: translate(170%, 135%);
       }
     }
 
@@ -191,6 +242,12 @@
       border: 1px solid black;
       width: 400px;
       overflow: hidden;
+      cursor: pointer;
+      transition: 200ms ease-in-out;
+    }
+
+    .blog-container div:hover {
+      box-shadow: 3px 3px black;
     }
 
     .blog-container div img {
@@ -198,6 +255,7 @@
       height: 300px;
       /* margin: 15px 0; */
       border-bottom: 1px solid black;
+      background-position: center;
     }
 
     .blog-title {
@@ -209,29 +267,56 @@
       gap: 10px;
     }
 
+    .places-header button,
+    .blog-header button {
+      font-size: 15px;
+      text-decoration: none;
+      padding: 10px 20px;
+      border: 1px solid black;
+      border-radius: 20px;
+      margin: 20px 0;
+      width: fit-content;
+      background-color: transparent;
+      cursor: pointer;
+    }
+
+    .places-header button:hover,
+    .blog-header button:hover,
+    .contact-container button:hover,
+    .container button:hover {
+      box-shadow: 3px 3px black;
+      cursor: pointer;
+      transition: 200ms ease-in-out;
+    }
+
     footer {
       padding: 100px;
-      margin: 30px 0;
+      border: 1px solid black;
+      width: 60%;
+      margin: 80px auto;
+    }
+
+    .nav ul li:hover {
+      padding: 10px 19px;
+      border: 1px solid black;
+      border-radius: 20px;
     }
   </style>
   <body>
     <header>
       <div class="nav">
-        <div class="nav-logo">m</div>
+        <div class="nav-logo">✿</div>
         <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Blog</li>
-          <li>Contact</li>
+          <li class="nav-home">Home</li>
+          <li class="nav-about">About</li>
+          <li class="nav-blog">Blog</li>
+          <li class="nav-contact">Contact</li>
         </ul>
       </div>
       <div class="container">
         <h1>Yen Travels</h1>
-        <p>
-          Sparking curiosity, making adventures, and capturing the world, one
-          place at a time.
-        </p>
-        <a href="">Read my blog</a>
+        <p>Making my life fun again!</p>
+        <button>Read my blog</button>
       </div>
     </header>
     <main>
@@ -244,7 +329,7 @@
       <div class="places">
         <div class="places-header">
           <h2>Past Travels</h2>
-          <a href="">SEE ALL</a>
+          <button>SEE ALL</button>
         </div>
         <div class="places-container">
           <div>
@@ -302,12 +387,12 @@
       <div class="blog">
         <div class="blog-header">
           <h2>Blog</h2>
-          <a href="">SEE ALL</a>
+          <button>SEE ALL</button>
         </div>
         <div class="blog-container">
           <div>
             <img
-              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/122/256/original/IMG_8019.JPG?1712475298https://s3.amazonaws.com/shecodesio-production/uploads/files/000/122/313/original/1.png?1712504724"
+              src="https://images.pexels.com/photos/2797526/pexels-photo-2797526.jpeg"
               alt=""
             />
             <div class="blog-title">
@@ -317,17 +402,17 @@
           </div>
           <div>
             <img
-              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/122/314/original/2.png?1712504733"
+              src="https://images.pexels.com/photos/4332584/pexels-photo-4332584.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
               alt=""
             />
             <div class="blog-title">
-              <h3>10 Best Things To Do In Ho Chi Minh City</h3>
+              <h3>10 Best Things To Do In Vietnam</h3>
               <span> <a href="index.html">➝</a></span>
             </div>
           </div>
           <div>
             <img
-              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/122/315/original/3.png?1712504741"
+              src="https://images.pexels.com/photos/5769435/pexels-photo-5769435.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
               alt=""
             />
             <div class="blog-title">
@@ -337,7 +422,7 @@
           </div>
           <div>
             <img
-              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/122/316/original/4.png?1712504750"
+              src="https://images.pexels.com/photos/2506923/pexels-photo-2506923.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
               alt=""
             />
             <div class="blog-title">
@@ -347,7 +432,7 @@
           </div>
           <div>
             <img
-              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/122/316/original/4.png?1712504750"
+              src="https://images.pexels.com/photos/1360254/pexels-photo-1360254.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
               alt=""
             />
             <div class="blog-title">
@@ -357,7 +442,7 @@
           </div>
           <div>
             <img
-              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/122/316/original/4.png?1712504750"
+              src="https://images.pexels.com/photos/6613343/pexels-photo-6613343.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
               alt=""
             />
             <div class="blog-title">
@@ -370,10 +455,10 @@
     </main>
     <footer>
       <div class="contact-container">
-        <div>
+        <p>
           If you want to reach out or want to get an update on my latest travels
-        </div>
-        <div>SEND A MESSAGE</div>
+        </p>
+        <button>SEND A MESSAGE</button>
       </div>
     </footer>
   </body>
